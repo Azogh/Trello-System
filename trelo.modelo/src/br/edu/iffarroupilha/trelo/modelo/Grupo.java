@@ -1,5 +1,7 @@
 package br.edu.iffarroupilha.trelo.modelo;
 
+import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+
 /**
  * <p>
  * Entidade que representa um grupo de usuários
@@ -8,7 +10,7 @@ package br.edu.iffarroupilha.trelo.modelo;
  * @since Sep 14, 2023 9:00:40 PM
  * @author Professor
  */
-public class Grupo {
+public class Grupo implements IEntidade {
 
 	private int codigo;
 	private String descricao;

@@ -1,5 +1,7 @@
 package br.edu.iffarroupilha.trelo.modelo;
 
+import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+
 /**
  * <p>
  * Entidade que representa um usuário no sistema. Usuário é o individuo
@@ -9,7 +11,7 @@ package br.edu.iffarroupilha.trelo.modelo;
  * @since Sep 14, 2023 9:04:53 PM
  * @author Professor
  */
-public class Usuario {
+public class Usuario implements IEntidade {
 
 	// atrubutos
 	private String nome;

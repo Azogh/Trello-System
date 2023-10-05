@@ -2,6 +2,8 @@ package br.edu.iffarroupilha.trelo.modelo;
 
 import java.util.Date;
 
+import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+
 /**
  * <p>
  * Entidade que representa uma tarefa a ser executada.
@@ -10,7 +12,7 @@ import java.util.Date;
  * @since Sep 14, 2023 9:35:48 PM
  * @author Professor
  */
-public class Tarefa {
+public class Tarefa implements IEntidade {
 
 	private String titulo;
 	private String descricao;
