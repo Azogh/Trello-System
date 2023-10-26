@@ -2,7 +2,10 @@ package br.edu.iffarroupilha.trelo.controle;
 
 import java.util.List;
 
+import br.edu.iffarroupilha.trelo.modelo.Tarefa;
 import br.edu.iffarroupilha.trelo.modelo.Usuario;
+import br.edu.iffarroupilha.trelo.modelo.nucleo.DAOException;
+import br.edu.iffarroupilha.trelo.modelo.nucleo.dao.ITarefaDAO;
 
 /**
  * <p>
@@ -13,6 +16,12 @@ import br.edu.iffarroupilha.trelo.modelo.Usuario;
  * @author Professor
  */
 public class TarefaLogica extends ALogica {
+	private ITarefaDAO dao;
+	
+	public TarefaLogica() {
+		super(Tarefa.class);
+	}
+	
 	/**
 	 * <p>
 	 * Retorna todas as tarefas que estejam alocadas
@@ -20,7 +29,7 @@ public class TarefaLogica extends ALogica {
 	 * @param usuario item utilizado no filtro
 	 * @return lista com as tarefas
 	 */
-	public List listar(Usuario usuario) {
-		return null;
+	public List listar(Usuario usuario) throws DAOException {
+		return dao.buscaporUsuario(usuario);
 	}
 }

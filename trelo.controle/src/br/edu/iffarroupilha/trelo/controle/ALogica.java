@@ -2,8 +2,9 @@ package br.edu.iffarroupilha.trelo.controle;
 
 import java.util.List;
 
-import br.edu.iffarroupilha.trelo.modelo.Tarefa;
+import br.edu.iffarroupilha.trelo.modelo.nucleo.DAOException;
 import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+import br.edu.iffarroupilha.trelo.modelo.nucleo.dao.IDAO;
 
 /**
  * <p> 
@@ -15,15 +16,22 @@ import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
 * @author Professor
 */
 public abstract class ALogica {
-
+	private IDAO dao; 
+	private Class<? extends IEntidade>  classEntidade;
+	
+	public ALogica(Class<? extends IEntidade>  classEntidade) {
+		this.classEntidade = classEntidade;
+	}
+	
+	
 	/**
 	 * <p>
 	 * Grava ou atualiza uma entidade  no banco de dados
 	 * </p>
 	 * @param entidade item a ser gravado ou atualizado
 	 */
-	public void gravar(IEntidade entidade) {
-		// serviço
+	public void gravar(IEntidade entidade) throws DAOException {
+		this.dao.gravar(entidade);
 	}
 	
 	/**
@@ -32,8 +40,8 @@ public abstract class ALogica {
 	 * </p>
 	 * @param entidade item a ser excluido
 	 */
-	public void deletar(IEntidade entidade) {
-		// serviço
+	public void deletar(IEntidade entidade)throws DAOException {
+		this.dao.deletar(entidade);
 	}
 	/**
 	 * <p>
@@ -41,8 +49,8 @@ public abstract class ALogica {
 	 * </p>
 	 * @return lista com as entidade
 	 */
-	public List listar() {
-		return null;
+	public List listar() throws DAOException {
+		return  this.dao.listarTodos(this.classEntidade);
 	}
 	
 	

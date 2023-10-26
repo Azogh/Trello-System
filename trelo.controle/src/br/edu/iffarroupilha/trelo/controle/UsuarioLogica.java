@@ -1,7 +1,5 @@
 package br.edu.iffarroupilha.trelo.controle;
 
-import java.util.List;
-
 import br.edu.iffarroupilha.trelo.modelo.Usuario;
 
 /**
@@ -14,4 +12,7 @@ import br.edu.iffarroupilha.trelo.modelo.Usuario;
  */
 public class UsuarioLogica extends ALogica {
 
+	public UsuarioLogica() {
+		super(Usuario.class);
+	}
 }
