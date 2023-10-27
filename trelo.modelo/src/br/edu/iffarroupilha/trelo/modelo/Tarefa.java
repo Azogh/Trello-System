@@ -3,6 +3,17 @@ package br.edu.iffarroupilha.trelo.modelo;
 import java.util.Date;
 
 import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jakarta.persistence.criteria.Join;
+import net.bytebuddy.build.ToStringPlugin.Exclude;
 
 /**
  * <p>
@@ -12,16 +23,26 @@ import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
  * @since Sep 14, 2023 9:35:48 PM
  * @author Professor
  */
+@Entity
 public class Tarefa implements IEntidade {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int idTarefa;
+	@Column(nullable = false, length = 300)
 	private String titulo;
+	@Column(nullable = false, length = 3000)
 	private String descricao;
+	@Column
 	private byte[] anexo; // rever no futuro
+	@Column
 	private boolean finalizada; // indica se a tarefa foi conclusa
-
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(nullable = false)
 	private Date dataCadastro;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataEntrega;
-
+	@ManyToOne
+	@JoinColumn(name = "cpf_responsavel")
 	private Usuario responsavel;
 
 	public String getTitulo() {

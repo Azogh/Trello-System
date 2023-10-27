@@ -1,6 +1,6 @@
 package br.edu.iffarroupilha.trelo.modelo;
 
-import javax.annotation.processing.Generated;
+import org.hibernate.annotations.Collate;
 
 import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
 import jakarta.persistence.Column;
@@ -20,12 +20,13 @@ import jakarta.persistence.Id;
 @Entity
 public class Grupo implements IEntidade {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
 	@Column(length = 20, nullable = false)
 	private String descricao;
 
-	// no futuro uma lista de usuario, será nessa classe?
+	
+
 	public int getCodigo() {
 		return codigo;
 	}

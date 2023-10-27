@@ -1,6 +1,11 @@
 package br.edu.iffarroupilha.trelo.modelo;
 
 import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 /**
  * <p>
@@ -11,14 +16,23 @@ import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
  * @since Sep 14, 2023 9:04:53 PM
  * @author Professor
  */
+@Entity
 public class Usuario implements IEntidade {
 
 	// atrubutos
+	@Column(length = 200, nullable = false)
 	private String nome;
+	@Id
+	@Column(length = 11, nullable = false)
 	private String cpf;
+	@Column(length = 150, nullable = false)
 	private String email;
+	@Column(length = 14)
 	private String telefone;
+	@Column(length = 32, nullable = false)
 	private String senha;
+	@ManyToOne
+	@JoinColumn(name = "idGrupo")
 	private Grupo grupo;
 
 	public String getNome() {

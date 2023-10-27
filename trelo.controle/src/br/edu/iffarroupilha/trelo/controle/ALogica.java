@@ -4,6 +4,7 @@ import java.util.List;
 
 import br.edu.iffarroupilha.trelo.modelo.nucleo.DAOException;
 import br.edu.iffarroupilha.trelo.modelo.nucleo.IEntidade;
+import br.edu.iffarroupilha.trelo.modelo.nucleo.dao.FabricaDAO;
 import br.edu.iffarroupilha.trelo.modelo.nucleo.dao.IDAO;
 
 /**
@@ -21,6 +22,12 @@ public abstract class ALogica {
 	
 	public ALogica(Class<? extends IEntidade>  classEntidade) {
 		this.classEntidade = classEntidade;
+		try {
+			this.dao = FabricaDAO.getFabrica().criarDAO(classEntidade);
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

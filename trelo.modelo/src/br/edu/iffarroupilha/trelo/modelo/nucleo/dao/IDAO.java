@@ -24,7 +24,7 @@ public interface IDAO {
 	 * @param entitudade
 	 * @throws DAOException
 	 */
-	public void gravar(IEntidade entitudade) throws DAOException;
+	public void gravar(IEntidade entidade) throws DAOException;
 	
 	/**
 	 * <p>
@@ -33,7 +33,7 @@ public interface IDAO {
 	 * @param entitudade
 	 * @throws DAOException
 	 */
-	public void deletar(IEntidade entitudade) throws DAOException;
+	public void deletar(IEntidade entidade) throws DAOException;
 	
 	/**
 	 * <p>
@@ -45,6 +45,13 @@ public interface IDAO {
 	 */
 	public List listarTodos(Class classeEntidade) throws DAOException;
 	
-	
-	
+	/**
+	 * <p>
+	 * Cria um DAO especiofico para dada entidde, exemplo TarefaDAO
+	 * O DAO é uma implmentacao especializada do padrao DAO para uma determinada
+	 * entiade
+	 * </p>
+	 * @return
+	 */
+	public <DAOEntidade extends IDAO> DAOEntidade criarDAO(Class<? extends IEntidade> classeEntidade) throws DAOException;
 }
