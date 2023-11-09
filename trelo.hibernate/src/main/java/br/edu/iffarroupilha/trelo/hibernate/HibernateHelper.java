@@ -1,4 +1,4 @@
-package trelo.hibernate;
+package br.edu.iffarroupilha.trelo.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -4,8 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import br.edu.iffarroupilha.trelo.controle.GrupoLogica;
+import br.edu.iffarroupilha.trelo.hibernate.dao.HibernateDAO;
 import br.edu.iffarroupilha.trelo.modelo.Grupo;
 import br.edu.iffarroupilha.trelo.modelo.nucleo.DAOException;
+import br.edu.iffarroupilha.trelo.modelo.nucleo.dao.FabricaDAO;
 
 /**
  * <p>
@@ -20,6 +22,7 @@ public class IndexController {
 
 	@GetMapping("/home")
 	public String home() throws DAOException {
+		
 		GrupoLogica
 		t = new GrupoLogica();
 		
@@ -27,7 +30,7 @@ public class IndexController {
 		
 		Grupo g1 = new Grupo();
 		g1.setDescricao("Grupo de suporte");
-		g1.setCodigo(1);
+		//g1.setCodigo(1);
 		t.gravar(g1);
 
 		System.out.println("Chamou metodo home!");

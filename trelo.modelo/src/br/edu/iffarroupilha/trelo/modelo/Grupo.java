@@ -21,11 +21,9 @@ import jakarta.persistence.Id;
 public class Grupo implements IEntidade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codigo;
+	public int codigo;
 	@Column(length = 20, nullable = false)
-	private String descricao;
-
-	
+	public String descricao;
 
 	public int getCodigo() {
 		return codigo;
