@@ -7,7 +7,7 @@
 	<version>1.o</version>
 	<description>Aplicação Desktop</description>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -20,12 +20,10 @@
 	</build>
 
 	<dependencies>
-
-
 		<dependency>
 			<groupId>br.edu.iffarroupilha</groupId>
 			<artifactId>trelo.controle</artifactId>
-			<version>1.0</version>
+			<version>1.o</version>
 		</dependency>
 	</dependencies>
 
