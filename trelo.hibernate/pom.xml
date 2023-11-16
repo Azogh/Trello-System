@@ -7,7 +7,9 @@
 	<version>1.0</version>
 	<description>Implementacao do padrao DAO Usando Hibernate</description>
 	<build>
-		
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

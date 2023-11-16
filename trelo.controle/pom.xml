@@ -7,7 +7,9 @@
 	<version>1.o</version>
 	<description>Projeto para armazenar as regras de negocio da aplicação</description>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

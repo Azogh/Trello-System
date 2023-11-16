@@ -7,7 +7,9 @@
 	<version>1.0</version>
 	<description>Projeto com o modelo de dados da aplicação</description>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

@@ -37,7 +37,6 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>br.edu.iffarroupilha</groupId>
 			<artifactId>trelo.controle</artifactId>
@@ -48,11 +47,12 @@
 			<artifactId>trelo.hibernate</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
-
 	</dependencies>
 
 	<build>
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
